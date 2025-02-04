@@ -57,7 +57,7 @@ const TelegramLoginButton = ({
     } else {
       script.setAttribute(
         "data-onauth",
-        onTelegramAuth(user)
+        "TelegramLoginWidget.dataOnauth(user)"
       );
     }
 
