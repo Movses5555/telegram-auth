@@ -39,8 +39,8 @@ const TelegramLoginButton = ({
 // </script>
     const script = document.createElement("script");
     script.src = "https://telegram.org/js/telegram-widget.js?22"; // src="https://telegram.org/js/telegram-widget.js?22"
-    script.setAttribute("data-telegram-login", botName); // data-telegram-login="smdev0"
-    script.setAttribute("data-size", buttonSize); // data-size="large"
+    script.setAttribute("data-telegram-login", 'smdev0'); // data-telegram-login="smdev0"
+    script.setAttribute("data-size", "large"); // data-size="large"
 
     // if (cornerRadius !== undefined) {
     //   script.setAttribute("data-radius", cornerRadius.toString());
@@ -50,14 +50,14 @@ const TelegramLoginButton = ({
       script.setAttribute("data-request-access", "write");
     }
 
-    script.setAttribute("data-userpic", usePic.toString());
+    // script.setAttribute("data-userpic", usePic.toString());
 
     if (typeof dataAuthUrl === "string") {
       script.setAttribute("data-auth-url", dataAuthUrl); // data-onauth="onTelegramAuth(user)
     } else {
       script.setAttribute(
         "data-onauth",
-        "TelegramLoginWidget.dataOnauth(user)"
+        onTelegramAuth(user)
       );
     }
 
