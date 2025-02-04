@@ -39,7 +39,7 @@ const TelegramLoginButton = ({
 // </script>
     const script = document.createElement("script");
     script.src = "https://telegram.org/js/telegram-widget.js?22"; // src="https://telegram.org/js/telegram-widget.js?22"
-    script.setAttribute("data-telegram-login", 'smdev0'); // data-telegram-login="smdev0"
+    script.setAttribute("data-telegram-login", botName); // data-telegram-login="smdev0"
     script.setAttribute("data-size", "large"); // data-size="large"
 
     // if (cornerRadius !== undefined) {
