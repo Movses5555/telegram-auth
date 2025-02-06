@@ -3,7 +3,7 @@ import TelegramLoginButton from "./components/TelegramBotButton";
 
 function App() {
 
-  let name = "ReactAuth123456789_bot";
+  let name = "okvpn_xbot";
   const handleBot = (user) => {
     console.log(user);
   };
