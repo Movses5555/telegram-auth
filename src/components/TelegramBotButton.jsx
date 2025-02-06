@@ -1,16 +1,19 @@
 import React, { useRef, useEffect } from "react";
 
-const TelegramLoginButton = ({
-  wrapperProps,
-  dataAuthUrl,
-  usePic = false,
-  botName,
-  className,
-  buttonSize = "large",
-  dataOnauth,
-  cornerRadius,
-  requestAccess = true,
-}) => {
+const TelegramLoginButton = (props) => {
+  const {
+    wrapperProps,
+    dataAuthUrl,
+    usePic = false,
+    botName,
+    className,
+    buttonSize = "large",
+    dataOnauth,
+    cornerRadius,
+    requestAccess = true,
+  } = props;
+  
+  console.log('props============', props);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -31,20 +34,10 @@ const TelegramLoginButton = ({
       };
     }
 
-//     <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="smdev0" data-size="large" data-onauth="onTelegramAuth(user)"></script>
-// <script type="text/javascript">
-//   function onTelegramAuth(user) {
-//     alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
-//   }
-// </script>
     const script = document.createElement("script");
     script.src = "https://telegram.org/js/telegram-widget.js?22"; // src="https://telegram.org/js/telegram-widget.js?22"
     script.setAttribute("data-telegram-login", botName); // data-telegram-login="smdev0"
     script.setAttribute("data-size", "large"); // data-size="large"
-
-    // if (cornerRadius !== undefined) {
-    //   script.setAttribute("data-radius", cornerRadius.toString());
-    // }
 
     if (requestAccess) {
       script.setAttribute("data-request-access", "write");
@@ -60,6 +53,9 @@ const TelegramLoginButton = ({
         "TelegramLoginWidget.dataOnauth(user)"
       );
     }
+
+    console.log('script', script);
+    
 
     script.async = true;
     ref.current.appendChild(script);
