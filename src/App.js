@@ -11,7 +11,12 @@ function App() {
 
   return (
     <div className="App">
-      <TelegramLogin />
+      <TelegramLogin
+        botName={name}
+        buttonSize="large"
+        usePic={false}
+        dataOnauth={handleBot}
+      />
       <TelegramLoginButton
         botName={name}
         buttonSize="large"

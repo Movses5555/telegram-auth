@@ -44,7 +44,7 @@ const TelegramLoginButton = ({
       script.setAttribute("data-request-access", "write");
     }
 
-    script.setAttribute("data-userpic", usePic.toString());
+    script.setAttribute("data-userpic", "true");
 
     if (typeof dataAuthUrl === "string") {
       script.setAttribute("data-auth-url", dataAuthUrl);
