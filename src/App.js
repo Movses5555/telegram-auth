@@ -1,5 +1,6 @@
 import './App.css';
 import TelegramLoginButton from "./components/TelegramBotButton";
+import TelegramLogin from "./components/TelBut";
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <TelegramLogin />
       <TelegramLoginButton
         botName={name}
         buttonSize="large"
